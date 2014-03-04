@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+  <persistence-unit name="socrates_persistence" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>gr.ntua.iccs.imu.recommendersimulation.persistence.model.socrates.IssueSubjectView</class>
+    <class>gr.ntua.iccs.imu.recommendersimulation.persistence.model.socrates.EventReceived</class>
+    <class>gr.ntua.iccs.imu.recommendersimulation.persistence.model.socrates.IssueText</class>
+    <exclude-unlisted-classes>true</exclude-unlisted-classes>
+    <properties>
+      <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/kde-socrates?zeroDateTimeBehavior=convertToNull"/>
+      <property name="javax.persistence.jdbc.password" value="1234"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.user" value="alert"/>
+    </properties>
+  </persistence-unit>
+  <persistence-unit name="stardom_persistence" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>gr.ntua.iccs.imu.recommendersimulation.persistence.model.stardom.Identity</class>
+    <class>gr.ntua.iccs.imu.recommendersimulation.persistence.model.stardom.IdentityProfileView</class>
+    <class>gr.ntua.iccs.imu.recommendersimulation.persistence.model.stardom.MetricSingleTable</class>
+    <class>gr.ntua.iccs.imu.metric.model.RecommendedItem</class>
+    <exclude-unlisted-classes>true</exclude-unlisted-classes>
+    <properties>
+      <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/kde-stardom?zeroDateTimeBehavior=convertToNull"/>
+      <property name="javax.persistence.jdbc.password" value="1234"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.user" value="alert"/>
+    </properties>
+  </persistence-unit>
+</persistence>
